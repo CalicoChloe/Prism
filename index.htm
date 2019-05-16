@@ -10,15 +10,15 @@
 		             $(document).ready(function() {
 				var btn = document.getElementsByClassName('choice');
 				var link = document.getElementsByClassName('button');
-				for(i=0; i<btn.length;i++) {
-					var btn_value = btn[i].options[btn[i].selectedIndex].value;
-					link[i].href = btn_value;
-				};
+				//for(i=0; i<btn.length;i++) {
+					//var btn_value = btn[i].options[btn[i].selectedIndex].value;
+					//link[i].href = btn_value;
+				//};
 		        		var now = new Date();
 				var hour    = now.getHours();
 				var minute  = now.getMinutes();
 				var day = now.getDay();
-				var L = ["mon.", "tues.", "wed.", "thurs.", "fri.", "sat.","sun."];
+				var L = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","Sunday"];
 				if(hour < 10) {
 					hour = "0" + hour;
 				}
@@ -31,16 +31,16 @@
 				if (minute < 10) {
 					minute = "0" + minute;
 				};
-				document.getElementById("time_box").innerHTML = hour + "'" + minute;
+				document.getElementById("time_box").innerHTML = hour + ":" + minute;
 				document.getElementById("day_box").innerHTML = L[day];
-			});	
+			});
 		 </script>
 	</head>
 	<body>
 		<div id="container">
 			<div id="banner">
 				<div id="message">
-					<div id="message_box">× welcome ×</div>
+					<div id="message_box">welcome</div>
 				</div>
 				<div id="time_box"></div>
 				<div id="day_box"></div>
@@ -54,75 +54,95 @@
 					<a class="button">
 						<img src="avatar/avatar_01.png" class="avatar"></img>
 					</a>
-					<p>4chan</p>
-					<select onchange="if (this.value) window.location.href=this.value, this.selected;" class="choice">
-						<option value="https://boards.4chan.org/a/">ANIME</option>
-						<option value="https://boards.4chan.org/v/">GAMES</option>
-						<option value="https://boards.4chan.org/vg/">GENERALS</option>
-						<option value="https://boards.4chan.org/wg/">RICE</option>
-					</select>
+					<p>lyra</p>
+					<div class="dropdown">
+					<button class="dropbtn">Basic</button>
+						<div class="dropdown-content">
+						<a target="_blank" href="https://mail.protonmail.com/inbox">protonmail</a>
+						<a target="_blank" href="https://www.ozk.com/login/personal">bank</a>
+						<a target="_blank" href="https://mail.google.com/">gmail</a>
+						<a target="_blank" href="https://github.com/">github</a>
+					</div>
+				</div>
 				</div>
 				<div class="card" style="background-color: #FCB941; color: #F0A830;">
 					<a class="button">
 						<img src="avatar/avatar_02.png" class="avatar"></img>
 					</a>
-					<p>アニメ</p>
-					<select onchange="if (this.value) window.location.href=this.value"" class="choice">
-						<option value="http://kissanime.ru/">kissanime.ru</option>
-						<option value="https://nyaa.si/">nyaa.si</option>
-						<option value="https://animebytes.tv/">animebytes</option>
-						<option value="https://bato.to/">bato.to</option>
-					</select>
+					<p>may</p>
+					<div class="dropdown">
+					<button class="dropbtn">social</button>
+						<div class="dropdown-content">
+						<a target="_blank" href="https://www.reddit.com/">reddit</a>
+						<a target="_blank" href="https://octodon.social/">mastodon</a>
+						<a target="_blank" href="https://www.rabb.it/">rabbit</a>
+						<a target="_blank" href="https://www.tumblr.com/dashboard">tumblr</a>
+					</div>
+				</div>
 				</div>
 				<div class="card" style="background-color: #7E3661; color: #E6567A;">
 					<a class="button">
 						<img src="avatar/avatar_03.png" class="avatar"></img>
 					</a>
-					<p>へんたい</p>
-					<select onchange="if (this.value) window.location.href=this.value"" class="choice">
-						<option value="https://exhentai.org/">sadpanda.org</option>
-						<option value="https://nhentai.net/">nhentai.net</option>
-						<option value="https://hitomi.la"/>hitomi.la</option>
-						<option value="https://sukebei.nyaa.si/">sukebei.nyaa.si</option>
-					</select>
+					<p>dawn</p>
+					<div class="dropdown">
+					<button class="dropbtn">school</button>
+						<div class="dropdown-content">
+						<a target="_blank" href="https://ggc.view.usg.edu/d2l/home">d2l</a>
+						<a target="_blank" href="https://ggc.gabest.usg.edu/pls/B400/twbkwbis.P_WWWLogin">banner</a>
+						<a target="_blank" href="https://outlook.office.com/owa/?realm=ggc.edu&vd=clawmail">clawmail</a>
+						<a target="_blank" href="https://www.mohela.com/">loans</a>
+					</div>
+				</div>
 				</div>
 				<div class="card" style="background-color: #4D545E; color: #4D545E;">
 					<a class="button">
 						<img src="avatar/avatar_04.png" class="avatar"></img>
 					</a>
-					<p>music</p>
-					<select onchange="if (this.value) window.location.href=this.value"" class="choice">
-						<option value="https://www.youtube.com/">youtube</option>
-						<option value="https://soundcloud.com/">soundcloud</option>
-						<option value="https://dojin.co/">dojin.co</option>
-						<option value="https://bandcamp.com/">bandcamp</option>
-					</select>
+					<p>hilda</p>
+					<div class="dropdown">
+					<button class="dropbtn">news</button>
+						<div class="dropdown-content">
+							<a target="_blank" href="https://www.ajc.com/">ajc</a>
+							<a target="_blank" href="https://unicornriot.ninja/">unicorn riot</a>
+						<a target="_blank" href="https://www.npr.org/">npr</a>
+						<a target="_blank" href="https://itsgoingdown.org/">it's going down</a>
+
+					</div>
 				</div>
+			</div>
 				<div class="card" style="background-color: #E26E67; color: #E74C3C;">
 					<a class="button">
 						<img src="avatar/avatar_05.png" class="avatar"></img>
 					</a>
-					<p>art</p>
-					<select onchange="if (this.value) window.location.href=this.value"" class="choice">
-						<option value="https://www.pixiv.net/">pixiv.net</option>
-						<option value="https://www.deviantart.com/">deviantart</option>
-						<option value="https://www.tumblr.com/dashboard">tumblr</option>
-						<option value="https://danbooru.donmai.us/">danbooru</option>
-					</select>
+					<p>rosa</p>
+					<div class="dropdown">
+					<button class="dropbtn">media</button>
+						<div class="dropdown-content">
+						<a target="_blank" href="https://www.youtube.com/">youtube</a>
+						<a target="_blank" href="https://getcomics.info/">getcomics</a>
+						<a target="_blank" href="https://www.netflix.com/browse">netflix</a>
+						<a target="_blank" href="https://kisscartoon.is/">kisscartoon</a>
+					</div>
 				</div>
+			</div>
 				<div class="card" style="background-color: #2CC990; color: #2CC990;">
 					<a class="button">
 						<img src="avatar/avatar_06.png" class="avatar"></img>
+						<href="www.google.com">
 					</a>
-					<p>misc</p>
-					<select onchange="if (this.value) window.location.href=this.value"" class="choice">
-						<option value="https://github.com/Catgrills">github</option>
-						<option value="https://greasyfork.org/en">greasyfork</option>
-						<option value="http://flatcolors.net/">flatcolors</option>
-						<option value="https://www.dealabs.com/">dealabs</option>
-					</select>
+					<p>selene</p>
+					<div class="dropdown">
+					<button class="dropbtn">other</button>
+						<div class="dropdown-content">
+						<a target="_blank" href="http://www.neopets.com/">neopets</a>
+						<a target="_blank" href="https://www.etsy.com/">etsy</a>
+						<a target="_blank" href="http://www.jellyneo.net/">jellyneo</a>
+						<a target="_blank" href="https://www.amazon.com/">amazon</a>
+					</div>
 				</div>
 			</div>
+			 <img src="pikashock.png" alt="pikachu" class="center">
 		</div>
 	</body>
 	<script type="text/javascript" src="js/search.js"></script>
