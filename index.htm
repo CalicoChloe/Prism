@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<title>Gonna Catch'em All</title>
-		<link rel="shortcut icon" type="image/png" href="icons/favicon.png"/>
+		<title>Gonna Catch 'em All!</title>
+		<link rel="icon" type="image/png" href="icons/pokeballicon.png">
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript">
@@ -28,11 +28,12 @@
 				}
 				updateDay();
 
+				var second;
 				function updateTime(){
 					var now = new Date();
 					var hour    = now.getHours();
 					var minute  = now.getMinutes();
-					var second  = now.getSeconds();
+					second  = now.getSeconds();
 					var mornOrEve = "AM"
 					if(hour > 11) {
 						mornOrEve = "PM"
@@ -54,7 +55,7 @@
 					document.getElementById("time_box").innerHTML = timeString;
 				}
 				updateTime();
-				setInterval(updateTime, 1000);
+				setInterval(updateTime, (60 - second) * 1000);
 			});
 
 		 </script>
