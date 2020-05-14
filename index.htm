@@ -14,26 +14,49 @@
 					//var btn_value = btn[i].options[btn[i].selectedIndex].value;
 					//link[i].href = btn_value;
 				//};
-		        		var now = new Date();
-				var hour    = now.getHours();
-				var minute  = now.getMinutes();
-				var day = now.getDay();
-				var L = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","Sunday"];
-				if(hour < 10) {
-					hour = "0" + hour;
+				function updateDay(){
+					var now = new Date();
+					var day = now.getDay();
+					var L = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","Sunday"];
+					if (day > 0) {
+						day = day-1;
+					}
+					if (day == 0) {
+						day = 6;
+					}
+					document.getElementById("day_box").innerHTML = L[day];
 				}
-				if (day > 0) {
-					day = day-1;
+				updateDay();
+
+				function updateTime(){
+					var now = new Date();
+					var hour    = now.getHours();
+					var minute  = now.getMinutes();
+					var second  = now.getSeconds();
+					var mornOrEve = "AM"
+					if(hour > 11) {
+						mornOrEve = "PM"
+					}
+					if(hour > 12) {
+						hour = hour - 12;
+					}
+					if(hour < 10) {
+						hour = "0" + hour;
+					}
+					if (minute < 10) {
+						minute = "0" + minute;
+					};
+					if (minute == 0) {
+						updateDay();
+					}
+
+					var timeString = hour + ":" + minute + " " + mornOrEve;
+					document.getElementById("time_box").innerHTML = timeString;
 				}
-				if (day == 0) {
-					day = 6;
-				}
-				if (minute < 10) {
-					minute = "0" + minute;
-				};
-				document.getElementById("time_box").innerHTML = hour + ":" + minute;
-				document.getElementById("day_box").innerHTML = L[day];
+				updateTime();
+				setInterval(updateTime, 1000);
 			});
+
 		 </script>
 	</head>
 	<body>
